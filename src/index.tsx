@@ -1,8 +1,10 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './app';
 
 import './css/main.css';
 
 const root = document.querySelector('#root');
 
-ReactDOM.render(<h1>Hello, World!!!</h1>, root);
+ReactDOM.render(<App />, root);
