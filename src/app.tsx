@@ -9,6 +9,9 @@ import Projects from './components/projects';
 import Navbar from './components/navbar';
 
 import { RouteObj } from './types';
+import classes from './css/classes';
+
+import background from './assets/background.jpg';
 
 const App: React.FC = () => {
   const routes: RouteObj[] = [
@@ -33,6 +36,7 @@ const App: React.FC = () => {
   return (
     <Router history={createBrowserHistory()}>
       <Navbar links={links} />
+      <img src={background} className={classes.background} />
       <Switch>
         {routeElements}
         {noLinkMatchRedirect}
