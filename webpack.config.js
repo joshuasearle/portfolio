@@ -12,6 +12,7 @@ module.exports = {
     rules: [
       { test: /\.tsx?$/, loader: 'ts-loader' },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
+      {test: /\.jpg$/, use: [{loader: 'file-loader', options: 'images/[hash]-[name].[ext]'}] }
     ],
   },
   plugins: [
