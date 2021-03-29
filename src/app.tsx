@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Router, Switch, Route } from 'react-router';
+import React from 'react';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 import Home from './components/home';
@@ -8,13 +8,7 @@ import Skills from './components/skills';
 import Projects from './components/projects';
 import Navbar from './components/navbar';
 
-type RouteObj = {
-  path: string;
-  name: string;
-  element: JSX.Element;
-};
-
-const x = <Home />;
+import { RouteObj } from './types';
 
 const App: React.FC = () => {
   const routes: RouteObj[] = [
@@ -24,13 +18,25 @@ const App: React.FC = () => {
     { path: '/skills', name: 'Skills', element: <Skills /> },
   ];
 
+  const links = routes.map((route) => ({ name: route.name, path: route.path }));
+
+  const noLinkMatchRedirect = (
+    <Route path='*'>{() => <Redirect to='/' />}</Route>
+  );
+
   const routeElements = routes.map((route) => (
-    <Route path={route.path}>{route.element}</Route>
+    <Route exact path={route.path}>
+      {route.element}
+    </Route>
   ));
+
   return (
     <Router history={createBrowserHistory()}>
-      <Navbar />
-      <Switch>{routeElements}</Switch>
+      <Navbar links={links} />
+      <Switch>
+        {routeElements}
+        {noLinkMatchRedirect}
+      </Switch>
     </Router>
   );
 };
