@@ -1,3 +1,4 @@
 export default {
-  background: 'background'
+  background: 'background',
+  navbar: 'navbar'
 }
