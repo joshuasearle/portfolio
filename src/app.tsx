@@ -36,7 +36,10 @@ const App: React.FC = () => {
   return (
     <Router history={createBrowserHistory()}>
       <Navbar links={links} />
-      <img src={background} className={classes.background} />
+      <div className={classes.background}>
+        <img src={background} />
+      </div>
+
       <Switch>
         {routeElements}
         {noLinkMatchRedirect}
