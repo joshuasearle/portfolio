@@ -3,5 +3,8 @@ export default {
   navbar: 'navbar',
   navbarAnimation: 'navbar-animation',
   home: 'home',
-  homeAnimation: 'home-animation'
+  homeAnimation: 'home-animation',
+  button: 'button',
+  arrow: 'arrow',
+  arrowContainer: 'arrow-container'
 }

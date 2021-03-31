@@ -7,7 +7,6 @@
   overflow: hidden visible;
   font-family: 'IBM Plex Mono', monospace;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 /* Background Styles */
@@ -93,33 +92,72 @@
 /* Home screen */
 
 .home {
-  margin: auto;
-  margin-top: 4em;
-  margin-bottom: 4em;
-  width: max-content;
+  position: fixed;
+  top: 47%;
+  left: 50%;
+  /* width: max-content; */
   font-size: 3rem;
-  max-width: 55%;
+  /* max-width: 55%; */
   text-align: center;
   opacity: 0;
-  transform: translateY(200px);
+  transform: translate(-50%, 0);
+  padding: 1em;
 }
 
 .home-animation {
   animation: home-animation;
   animation-duration: 0.7s;
   opacity: 100%;
-  transform: translateY(0);
+  transform: translate(-50%, -50%);
 }
 
 @keyframes home-animation {
   from {
     opacity: 0;
-    transform: translateY(200px);
+    transform: translate(-50%, 0);
   }
 
   to {
     opacity: 100%;
-    transform: translateY(0px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Button */
+
+.button {
+  color: white;
+  background-color: #6c41ad;
+  margin-top: 3em;
+  padding: 1em 3em;
+  font-size: 1.5rem;
+  border-radius: 0.2em;
+  animation: button-unhover;
+  animation-duration: 0.3s;
+  transform: scale(1);
+}
+
+.button:hover {
+  animation: button-hover;
+  animation-duration: 0.3s;
+  transform: scale(1.1);
+}
+
+@keyframes button-hover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes button-unhover {
+  to {
+    transform: scale(1);
+  }
+  from {
+    transform: scale(1.1);
   }
 }
 
@@ -132,6 +170,11 @@
 
   .home {
     max-width: 80%;
+    font-size: 2.5rem;
+  }
+
+  .button {
+    font-size: 1.2rem;
   }
 }
 
