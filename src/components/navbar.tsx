@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom';
 
 import { RouteName } from '../types';
 import classes from '../css/classes';
-import useClicked from '../hooks/use_clicked';
 
 interface NavbarProps {
   links: RouteName[];
+  onClick: () => void;
+  reanimate: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ links }) => {
-  const [clicked, click] = useClicked();
-
-  // Set the css class list based on navbarClicked state
-  const classList = clicked
+const Navbar: React.FC<NavbarProps> = ({ links, onClick, reanimate }) => {
+  // Set the css class list based on reanimate
+  const classList = reanimate
     ? classes.navbar
     : `${classes.navbar} ${classes.navbarAnimation}`;
 
@@ -23,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
   ));
 
   return (
-    <nav onClick={click} className={classList}>
+    <nav onClick={onClick} className={classList}>
       {linkElements}
     </nav>
   );
