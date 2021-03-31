@@ -88,14 +88,53 @@
   }
 }
 
+/* Home screen */
+
+.home {
+  margin: auto;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  width: max-content;
+  font-size: 3rem;
+  max-width: 55%;
+  text-align: center;
+}
+
+.home-animtion {
+  animation: home-animation;
+  animation-duration: 0.7s;
+}
+
+@keyframes home-animation {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
+
+/* Meida Queries */
+
 @media (max-width: 800px) {
   .navbar {
     width: 80%;
+  }
+
+  .home {
+    max-width: 80%;
   }
 }
 
 @media (max-width: 450px) {
   .navbar {
     width: 95%;
+  }
+
+  .home {
+    max-width: 95%;
   }
 }
