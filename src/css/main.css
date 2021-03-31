@@ -35,6 +35,22 @@
   justify-content: space-between;
 }
 
+.navbar-animation {
+  animation: load-nav;
+  animation-duration: 0.7s;
+}
+
+@keyframes load-nav {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
 .navbar a {
   font-size: 1.2rem;
   text-decoration: none;
