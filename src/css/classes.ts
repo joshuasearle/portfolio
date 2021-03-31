@@ -1,4 +1,5 @@
 export default {
   background: 'background',
-  navbar: 'navbar'
+  navbar: 'navbar',
+  navbarAnimation: 'navbar-animation'
 }
