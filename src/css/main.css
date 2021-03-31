@@ -7,6 +7,7 @@
   overflow: hidden visible;
   font-family: 'IBM Plex Mono', monospace;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Background Styles */
@@ -30,6 +31,7 @@
 
 .navbar {
   margin: 1em auto;
+  margin-bottom: 4em;
   width: 55%;
   display: flex;
   justify-content: space-between;
@@ -98,11 +100,15 @@
   font-size: 3rem;
   max-width: 55%;
   text-align: center;
+  opacity: 0;
+  transform: translateY(200px);
 }
 
-.home-animtion {
+.home-animation {
   animation: home-animation;
   animation-duration: 0.7s;
+  opacity: 100%;
+  transform: translateY(0);
 }
 
 @keyframes home-animation {

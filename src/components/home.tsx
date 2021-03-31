@@ -1,9 +1,16 @@
 import React from 'react';
 import classes from '../css/classes';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  reanimate: boolean;
+}
+
+const Home: React.FC<HomeProps> = ({ reanimate }) => {
+  const classList = reanimate
+    ? classes.home
+    : `${classes.home} ${classes.homeAnimation}`;
   return (
-    <div className={classes.home}>
+    <div className={classList}>
       <h1>Joshua Searle</h1>
     </div>
   );
