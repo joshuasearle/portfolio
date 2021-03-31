@@ -3,7 +3,7 @@ import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 import Home from './components/home';
-import About from './components/about';
+import Contact from './components/contact';
 import Skills from './components/skills';
 import Projects from './components/projects';
 import Navbar from './components/navbar';
@@ -21,16 +21,12 @@ const App: React.FC = () => {
 
   const routes: RouteObj[] = [
     { path: '/', name: 'Home', element: <Home reanimate={reanimate} /> },
-    { path: '/about', name: 'About', element: <About /> },
     { path: '/projects', name: 'Projects', element: <Projects /> },
     { path: '/skills', name: 'Skills', element: <Skills /> },
+    { path: '/contact', name: 'Contact', element: <Contact /> },
   ];
 
   const links = routes.map((route) => ({ name: route.name, path: route.path }));
-
-  const noLinkMatchRedirect = (
-    <Route path='*'>{() => <Redirect to='/home' />}</Route>
-  );
 
   const routeElements = routes.map((route) => (
     <Route exact path={route.path}>
@@ -44,11 +40,7 @@ const App: React.FC = () => {
       <div className={classes.background}>
         <img src={background} />
       </div>
-      <Switch>
-        <Route exact path={'/'}>
-          <Home reanimate={reanimate} />
-        </Route>
-      </Switch>
+      <Switch>{routeElements}</Switch>
     </Router>
   );
 };
