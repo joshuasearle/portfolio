@@ -18,14 +18,12 @@ const Navbar: React.FC<NavbarProps> = ({ links, onClick, reanimate }) => {
 
   // Create list of links
   const linkElements = links.map((link) => (
-    <Link to={link.path}>{link.name}</Link>
+    <Link onClick={onClick} to={link.path}>
+      {link.name}
+    </Link>
   ));
 
-  return (
-    <nav onClick={onClick} className={classList}>
-      {linkElements}
-    </nav>
-  );
+  return <nav className={classList}>{linkElements}</nav>;
 };
 
 export default Navbar;
