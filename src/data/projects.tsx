@@ -1,5 +1,14 @@
 import { Technology, Project } from '../types';
 
+import golSim from '../assets/gol_sim.jpg';
+import sortAlg from '../assets/gol_sim.jpg';
+import bacCalc from '../assets/gol_sim.jpg';
+import boids from '../assets/gol_sim.jpg';
+import ttst from '../assets/gol_sim.jpg';
+import bms from '../assets/gol_sim.jpg';
+import poll from '../assets/gol_sim.jpg';
+import rlzg from '../assets/gol_sim.jpg';
+
 const projects: Project[] = [
   {
     name: 'Game of Life Simulator',
@@ -13,6 +22,7 @@ const projects: Project[] = [
       Technology.Webpack,
     ],
     description: "Website for simulating John Conway's Game of Life",
+    photo: golSim,
   },
   {
     name: 'Sorting Algorithm Visualiser',
@@ -28,6 +38,7 @@ const projects: Project[] = [
       Technology.Redux,
       Technology.Webpack,
     ],
+    photo: sortAlg,
   },
   {
     name: 'BAC Calculator',
@@ -44,6 +55,7 @@ const projects: Project[] = [
       Technology.Chartjs,
       Technology.Webpack,
     ],
+    photo: bacCalc,
   },
   {
     name: 'Boids!',
@@ -52,6 +64,7 @@ const projects: Project[] = [
     description:
       'Boids are a form of artificial life that move based on three simple rules. This site attempts help explore boids, allowing users to experiment with some of the settings.',
     technologies: [Technology.JavaScript, Technology.CSS, Technology.HTML],
+    photo: boids,
   },
   {
     name: 'Real Time Text to Speech Translator',
@@ -68,6 +81,7 @@ const projects: Project[] = [
       Technology.GoogleCloudFunctions,
       Technology.Express,
     ],
+    photo: ttst,
   },
   {
     name: 'Realtime Poll Webapp',
@@ -83,12 +97,14 @@ const projects: Project[] = [
       Technology.Chartjs,
       Technology.Express,
     ],
+    photo: poll,
   },
   {
     name: 'Rogue-like Zombie Game',
     source: 'https://github.com/joshuasearle/roguelike-zombie-game',
     description: 'Roguelike zombie survival game made in Java.',
     technologies: [Technology.Java],
+    photo: rlzg,
   },
   {
     name: 'Book Management System',
@@ -104,5 +120,8 @@ const projects: Project[] = [
       Technology.CSS,
       Technology.Mongodb,
     ],
+    photo: bms,
   },
 ];
+
+export default projects;
