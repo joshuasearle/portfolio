@@ -1,6 +1,6 @@
 import React from 'react';
-import { Router, Switch, Route, Redirect } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { Router, Switch, Route } from 'react-router-dom';
+import { createHashHistory } from 'history';
 
 import Home from './components/home';
 import Contact from './components/contact';
@@ -14,7 +14,7 @@ import useClicked from './hooks/use_clicked';
 
 import background from './assets/background.jpg';
 
-const history = createBrowserHistory();
+const history = createHashHistory();
 
 const App: React.FC = () => {
   const [reanimate, click] = useClicked();
