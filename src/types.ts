@@ -35,4 +35,5 @@ export type Project = {
   link?: string;
   source: string;
   technologies: Technology[];
+  photo: any;
 }
