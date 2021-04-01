@@ -1,13 +1,13 @@
 import { Technology, Project } from '../types';
 
 import golSim from '../assets/gol_sim.jpg';
-import sortAlg from '../assets/gol_sim.jpg';
-import bacCalc from '../assets/gol_sim.jpg';
-import boids from '../assets/gol_sim.jpg';
+import sortAlg from '../assets/sort_alg.jpg';
+import bacCalc from '../assets/bac_calc.jpg';
+import boids from '../assets/boids.jpg';
 import ttst from '../assets/gol_sim.jpg';
 import bms from '../assets/gol_sim.jpg';
 import poll from '../assets/gol_sim.jpg';
-import rlzg from '../assets/gol_sim.jpg';
+import rlzg from '../assets/rlzg.jpg';
 
 const projects: Project[] = [
   {
