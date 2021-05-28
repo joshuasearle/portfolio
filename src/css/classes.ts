@@ -13,5 +13,10 @@ export default {
   projects: 'projects',
   link: 'link',
   tileInfo: 'tile-info',
-  title: 'title'
-}
+  title: 'title',
+  projectTitle: 'project-title',
+  projectImage: 'project-image',
+  projectDesc: 'project-desc',
+  projectButtons: 'project-buttons',
+  projectButton: 'project-button',
+};

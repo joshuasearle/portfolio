@@ -149,6 +149,7 @@ body,
   animation: button-unhover;
   animation-duration: 0.3s;
   transform: scale(1);
+  text-decoration: none;
 }
 
 .button:hover {
@@ -263,6 +264,14 @@ body,
   .button {
     font-size: 1.2rem;
   }
+
+  .project-buttons {
+    max-width: 80%;
+  }
+
+  .project-desc {
+    max-width: 80%;
+  }
 }
 
 @media (max-width: 450px) {
@@ -273,4 +282,53 @@ body,
   .home {
     max-width: 95%;
   }
+
+  .project-buttons {
+    max-width: 95%;
+  }
+
+  .project-desc {
+    max-width: 95%;
+  }
+}
+
+.project-title {
+  text-align: center;
+}
+
+.project-image {
+  margin-top: 2em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 50%;
+}
+
+.project-desc {
+  background-color: white;
+  border-radius: 0.2em;
+  width: 50%;
+  margin: auto;
+  margin-top: 2em;
+  padding: 2em;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3em auto;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.project-button {
+  text-decoration: none;
+  color: white;
+  background-color: #6c41ad;
+  padding: 1em 3em;
+  font-size: 1.3rem;
+  border-radius: 0.2em;
+  margin: 1em;
 }
