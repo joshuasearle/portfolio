@@ -4,10 +4,10 @@ import golSim from '../assets/gol_sim.jpg';
 import sortAlg from '../assets/sort_alg.jpg';
 import bacCalc from '../assets/bac_calc.jpg';
 import boids from '../assets/boids.jpg';
-import ttst from '../assets/gol_sim.jpg';
-import bms from '../assets/gol_sim.jpg';
-import poll from '../assets/gol_sim.jpg';
+import ttst from '../assets/ttst.jpg';
 import rlzg from '../assets/rlzg.jpg';
+import spa_movie from '../assets/spa.jpg';
+import gcic from '../assets/gcic.jpg';
 
 const projects: Project[] = [
   {
@@ -67,6 +67,20 @@ const projects: Project[] = [
     photo: boids,
   },
   {
+    name: 'Guitar Chord Image Creator',
+    link: 'https://joshuasearle.github.io/guitar-chord-image-generator/',
+    source: 'https://github.com/joshuasearle/guitar-chord-image-generator',
+    description:
+      'Generates images of guitar chords, based upon the chord name, size of the image, fret to hold down, which finger to use on each string.',
+    technologies: [
+      Technology.TypeScript,
+      Technology.HTML,
+      Technology.CSS,
+      Technology.Webpack,
+    ],
+    photo: gcic,
+  },
+  {
     name: 'Real Time Text to Speech Translator',
     source:
       'https://github.com/joshuasearle/real-time-text-to-speech-translator',
@@ -84,22 +98,6 @@ const projects: Project[] = [
     photo: ttst,
   },
   {
-    name: 'Realtime Poll Webapp',
-    source: 'https://github.com/joshuasearle/realtime-poll-webapp',
-    description:
-      'Allows users to create their own custom poll, and watch the poll numbers move in real-time, without page reloading.',
-    technologies: [
-      Technology.TypeScript,
-      Technology.Angular,
-      Technology.Nodejs,
-      Technology.Websockets,
-      Technology.Bootstrap,
-      Technology.Chartjs,
-      Technology.Express,
-    ],
-    photo: poll,
-  },
-  {
     name: 'Rogue-like Zombie Game',
     source: 'https://github.com/joshuasearle/roguelike-zombie-game',
     description: 'Roguelike zombie survival game made in Java.',
@@ -107,9 +105,9 @@ const projects: Project[] = [
     photo: rlzg,
   },
   {
-    name: 'Book Management System',
+    name: 'Movie Management System',
     source: 'https://github.com/joshuasearle/spa-book-management',
-    description: 'Full stack book management system.',
+    description: 'Full stack movie management system.',
     technologies: [
       Technology.TypeScript,
       Technology.Angular,
@@ -120,7 +118,7 @@ const projects: Project[] = [
       Technology.CSS,
       Technology.Mongodb,
     ],
-    photo: bms,
+    photo: spa_movie,
   },
 ];
 

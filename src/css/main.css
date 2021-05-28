@@ -217,7 +217,7 @@ body,
 .project-tile:hover {
   animation: hover-project;
   animation-duration: 0.4s;
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .project-tile-img img {
@@ -234,7 +234,7 @@ body,
   }
 
   to {
-    transform: scale(1.02);
+    transform: scale(1.01);
   }
 }
 
@@ -244,7 +244,7 @@ body,
   }
 
   from {
-    transform: scale(1.02);
+    transform: scale(1.01);
   }
 }
 
