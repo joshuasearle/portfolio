@@ -28,7 +28,11 @@ const App: React.FC = () => {
     { path: '/contact', name: 'Contact', element: <Contact /> },
   ];
 
-  const links = routes.map((route) => ({ name: route.name, path: route.path }));
+  const links = routes
+    .map((route) => ({ name: route.name, path: route.path }))
+    .filter((link) => {
+      return link.name !== 'Project';
+    });
 
   const routeElements = routes.map((route) => (
     <Route exact path={route.path}>
