@@ -19,4 +19,7 @@ export default {
   projectDesc: 'project-desc',
   projectButtons: 'project-buttons',
   projectButton: 'project-button',
+  contactImage: 'contact-image',
+  contactPiece: 'contact-piece',
+  contactPieces: 'contact-pieces',
 };

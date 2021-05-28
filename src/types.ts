@@ -49,6 +49,28 @@ export const techToString = (tech: Technology) => {
   if (tech === Technology.Redux) return 'Redux';
 };
 
+export const allTech = () => {
+  return [
+    Technology.JavaScript,
+    Technology.React,
+    Technology.Nodejs,
+    Technology.TypeScript,
+    Technology.Webpack,
+    Technology.Websockets,
+    Technology.Java,
+    Technology.Python,
+    Technology.HTML,
+    Technology.CSS,
+    Technology.Bootstrap,
+    Technology.Angular,
+    Technology.Chartjs,
+    Technology.Redux,
+    Technology.Mongodb,
+    Technology.GoogleCloudFunctions,
+    Technology.Express,
+  ];
+};
+
 export type Project = {
   name: string;
   description: string;
