@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory, Redirect } from 'react-router-dom';
 
 import { Project } from '../types';
 import classes from '../css/classes';
 
 interface ProjectTileProps {
   project: Project;
+  projectIndex: number;
 }
 
-const ProjectTile: React.FC<ProjectTileProps> = ({ project }) => {
+const ProjectTile: React.FC<ProjectTileProps> = ({ project, projectIndex }) => {
+  const [redirect, setRedirect] = useState(false);
+  const history = useHistory();
+  if (redirect) {
+    // Save projects on browser history
+    history.push('/projects');
+    return <Redirect to={`/projects/${projectIndex + 1}`} />;
+  }
+
   const { name, link, source, description, technologies, photo } = project;
 
   const linkElement = link ? (
@@ -19,7 +29,7 @@ const ProjectTile: React.FC<ProjectTileProps> = ({ project }) => {
   ) : null;
 
   return (
-    <div className={classes.projectTile}>
+    <div onClick={() => setRedirect(true)} className={classes.projectTile}>
       <div className={classes.tileInfo}>
         <h1 className={classes.projectTileTitle}>{name}</h1>
         <p>

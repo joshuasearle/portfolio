@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import classes from '../css/classes';
 import projects from '../data/projects';
+import { techToString } from '../types';
 
 interface ProjectProps {}
 
@@ -21,7 +22,16 @@ const Project: React.FC<ProjectProps> = () => {
         src={project.photo}
         alt={project.name}
       />
-      <div className={classes.projectDesc}>{project.description}</div>
+      <div className={classes.projectDesc}>
+        <strong>Project Description</strong>
+        <br />
+        {project.description}
+        <br />
+        <br />
+        <strong>Technologies Used:</strong>
+        <br />
+        {project.technologies.map(techToString).join(', ')}
+      </div>
       <div className={classes.projectButtons}>
         {!project.link ? null : (
           <a className={classes.projectButton} href={project.link} target={'#'}>
