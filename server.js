@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const dotenv = require('dotenv');
 
 const app = express();
-const port = 8080;
+dotenv.config();
+const port = process.env.PORT || 8080;
 
 const links = require('./data/links');
 const projectData = require('./data/projectData');
