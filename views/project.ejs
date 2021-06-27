@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head') %>
+  <body>
+    <%- include('./components/navbar', { page, links }) %>
+    <h1 class="project__title"><%= project.name %></h1>
+    <div class="project__video-container">
+      <iframe
+        class="project__video"
+        src="https://www.youtube.com/embed/<%= project.youtubeId %>"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="project__description"><%= project.description %></div>
+    <div class="project__buttons">
+      <% if (project.liveUrl) {%><a
+        href="<%= project.liveUrl %>"
+        class="project__live"
+        target="_blank"
+        >See it live</a
+      ><%}%>
+      <a class="project__code" target="_blank" href="<%= project.codeUrl %>"
+        >See the code</a
+      >
+    </div>
+  </body>
+</html>

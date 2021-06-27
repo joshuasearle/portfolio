@@ -1,0 +1,27 @@
+<nav class="nav">
+  <div class="nav__container">
+    <a href="/" class="nav__title">Josh Searle</a>
+    <div class="nav__links">
+      <% for (const pageData of links) { %>
+      <a
+        id="<%= pageData.pageName %>"
+        href="<%= pageData.path %>"
+        class="
+          nav__link
+          <%=
+          page
+          ===
+          pageData.pageName
+          ?
+          'nav__link--active'
+          :
+          ''
+          %>
+        "
+      >
+        <%= pageData.name %>
+      </a>
+      <% } %>
+    </div>
+  </div>
+</nav>

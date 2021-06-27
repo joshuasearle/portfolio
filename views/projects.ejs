@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head') %>
+  <body>
+    <%- include('./components/navbar', { page, links }) %>
+    <h1 class="projects__title">Projects</h1>
+    <div class="projects__list">
+      <% for (const projectSlug of Object.keys(projectData)) { %>
+      <a class="projects__card" href="./projects/<%= projectSlug %>">
+        <h2><%= projectData[projectSlug].name %></h2>
+        <img
+          class="projects__image"
+          src="https://img.youtube.com/vi/<%= projectData[projectSlug].youtubeId %>/0.jpg"
+          alt="Thumnail of demo video for project"
+      /></a>
+      <%} %>
+    </div>
+  </body>
+</html>

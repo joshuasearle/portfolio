@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* background */
+
+html {
+  width: 100vw;
+  min-height: 100%;
+  height: fit-content;
+  position: relative;
+  background: linear-gradient(90deg, #de6262, #ffb88c, #de6262, #ffb88c);
+  background-size: 400% 400%;
+  animation: animate-background 10s linear infinite;
+  /* only way i could find to fix */
+  overflow-x: hidden;
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 90%;
+  }
+}
+
+/* nav styles */
+
+.nav {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  margin: 0;
+}
+
+.nav__container {
+  margin: auto;
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__title {
+  color: white;
+  padding: 0.5em 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .nav__container {
+    width: 80%;
+    justify-content: center;
+  }
+
+  .nav__title {
+    display: none;
+  }
+}
+
+.nav__link {
+  display: flex;
+  height: 5em;
+  align-items: center;
+  padding: 0 2em;
+}
+
+.nav__link:hover,
+.nav__link:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav__link--active {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  .nav__link {
+    font-size: 0.8rem;
+  }
+}
+
+/* home */
+
+.home {
+  /* width: 900px; */
+  width: 80%;
+  margin: auto;
+}
+
+.home__title {
+  margin-top: 1.5em;
+  color: black;
+  font-size: 5rem;
+}
+
+.home__buttons {
+  text-align: center;
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.home__projects {
+  display: block;
+  width: fit-content;
+  padding: 1em 2em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.home__contact {
+  display: block;
+  width: fit-content;
+  padding: 1em 2em;
+  color: black;
+}
+
+.circle1 {
+  bottom: 0;
+  right: 25%;
+  position: absolute;
+  height: 40%;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.circle2 {
+  bottom: 20%;
+  right: 0;
+  position: absolute;
+  height: 40%;
+  width: 35%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 950px) {
+  .home__title {
+    font-size: 3rem;
+    margin: auto;
+    margin-top: 1.5em;
+    width: fit-content;
+  }
+
+  .home__buttons {
+    margin: auto;
+    margin-top: 2em;
+    font-size: 1.2rem;
+    width: fit-content;
+  }
+
+  .circle1 {
+    width: 75%;
+    height: 30%;
+    left: 0;
+  }
+
+  .circle2 {
+    width: 75%;
+    height: 30%;
+    bottom: 10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .home__title {
+    margin-top: 3em;
+    font-size: 2rem;
+  }
+
+  .home__buttons {
+    font-size: 1rem;
+  }
+
+  #contact {
+    display: none;
+  }
+}
+
+@media (max-height: 700px) {
+  .circle1,
+  .circle2 {
+    display: none;
+  }
+}
+
+/* about */
+
+.about__title {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3rem;
+}
+
+.about__content {
+  display: block;
+  background-color: white;
+  width: 900px;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 2em;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 1000px) {
+  .about__content {
+    width: 80%;
+  }
+}
+
+/* projects */
+
+.projects__title {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3rem;
+}
+
+.projects__list {
+  /* to account for the margins of cards */
+  width: calc(900px + 4em);
+  margin: 2em auto;
+  margin-top: 0;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .projects__list {
+    width: 80%;
+    justify-content: center;
+  }
+}
+
+.projects__card {
+  background-color: white;
+  width: fit-content;
+  padding: 1em;
+  text-align: center;
+  margin: 2em;
+  margin: clamp(2em, auto, auto);
+}
+
+.projects__image {
+  width: 20em;
+}
+
+/* project */
+.project__title {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3rem;
+}
+
+.project__video-container {
+  width: 900px;
+  height: 560px;
+  margin: auto;
+  margin-top: 1em;
+  background-color: black;
+}
+
+@media (max-width: 1000px) {
+  .project__video-container {
+    width: 100vw;
+    height: 62.5vw;
+  }
+}
+
+.project__video {
+  width: 100%;
+  height: 100%;
+}
+
+.project__description {
+  width: 900px;
+  background-color: white;
+  padding: 2em;
+  font-size: 1.4rem;
+  margin: 2em auto;
+}
+
+@media (max-width: 1000px) {
+  .project__description {
+    width: 80vw;
+  }
+}
+
+.project__buttons {
+  width: fit-content;
+  margin: 2em auto;
+  text-align: center;
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.project__live {
+  display: block;
+  width: fit-content;
+  padding: 1em 2em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.project__code {
+  display: block;
+  width: fit-content;
+  padding: 1em 2em;
+  color: black;
+}
