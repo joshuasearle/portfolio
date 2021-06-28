@@ -3,5 +3,19 @@
   <%- include('./components/head') %>
   <body>
     <%- include('./components/navbar', { page, links }) %>
+    <h1 class="skills__title">Skills</h1>
+    <div class="skills__container">
+      <% for (const skill of skills) { %>
+      <div class="skills__category">
+        <h2 class="skills__name"><%= skill.category %></h2>
+        <ul class="skills__list">
+          <% for (const skillItem of skill.items) { %>
+          <li class="skills__item"><%= skillItem %></li>
+          <% } %>
+        </ul>
+      </div>
+
+      <% } %>
+    </div>
   </body>
 </html>

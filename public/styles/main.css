@@ -334,3 +334,44 @@ html {
   padding: 1em 2em;
   color: black;
 }
+
+/* skills */
+.skills__title {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3rem;
+}
+
+.skills__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  width: 900px;
+  background-color: white;
+  font-size: 1.4rem;
+  margin: 2em auto;
+}
+
+@media (max-width: 1000px) {
+  .skills__container {
+    width: 80vw;
+  }
+}
+
+.skills__name {
+  font-size: 2rem;
+}
+
+.skills__category {
+  /* limit two items per row */
+  flex: 1 0 calc(50% - 4em);
+  margin: 2em;
+}
+
+.skills__list {
+  list-style-position: inside;
+}
+
+.skills__item {
+}

@@ -9,6 +9,7 @@ const port = process.env.PORT || 8080;
 
 const links = require('./data/links');
 const projectData = require('./data/projectData');
+const skills = require('./data/skills');
 
 app.use(morgan('tiny'));
 app.use(express.json());
@@ -35,7 +36,7 @@ app.get('/projects/:slug', (req, res) => {
 });
 
 app.get('/skills', (req, res) => {
-  res.render('skills', { page: 'skills', links });
+  res.render('skills', { page: 'skills', links, skills });
 });
 
 app.get('/contact', (req, res) => {
