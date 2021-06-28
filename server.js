@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 
 const app = express();
@@ -10,6 +11,17 @@ const port = process.env.PORT || 8080;
 const links = require('./data/links');
 const projectData = require('./data/projectData');
 const skills = require('./data/skills');
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false,
+  requireTLS: true,
+  auth: {
+    user: process.env.EMAIL_ADDRESS,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
 
 app.use(morgan('tiny'));
 app.use(express.json());
@@ -43,7 +55,21 @@ app.get('/contact', (req, res) => {
   res.render('contact', { page: 'contact', links });
 });
 
-app.post('/contact', (req, res) => {});
+app.post('/contact', async (req, res) => {
+  const mailOptions = {
+    from: process.env.EMAIL_ADDRESS,
+    to: process.env.TARGET_EMAIL_ADDRESS,
+    subject: `Contact request from ${req.body.email}`,
+    text: req.body.content,
+  };
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    res.status(200).send();
+  } catch (e) {
+    console.error(e);
+    res.status(500).send();
+  }
+});
 
 app.use('/', (req, res) => {
   res.redirect('/');
